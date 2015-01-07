@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 ENV CONFIGURE_OPTS --disable-install-doc
 ENV PATH /root/.rbenv/versions/2.2.0/bin:/root/.rbenv/bin:$PATH
-ENV RUBYOPT "-W0 $RUBYOPT"
+ENV RUBYOPT W0
 
 # Install packages for building ruby
 RUN apt-get update && \
