@@ -1,6 +1,7 @@
 FROM debian:wheezy
 
 ENV CONFIGURE_OPTS --disable-install-doc
+ENV PATH /root/.rbenv/versions/2.2.0/bin:/root/.rbenv/bin:$PATH
 
 # Install packages for building ruby
 RUN apt-get update && \
@@ -18,4 +19,4 @@ RUN apt-get update && \
 	rbenv install 2.2.0 && echo 'gem: --no-rdoc --no-ri' >> /.gemrc && \
 	rbenv global 2.2.0 && gem install bundler && rbenv rehash
 
-ENV PATH /root/.rbenv/versions/2.2.0/bin:/root/.rbenv/bin:$PATH
+
