@@ -6,10 +6,7 @@ ENV RUBYOPT W0
 
 # Install packages for building ruby
 RUN apt-get update && \
-	apt-get install -y python-software-properties && \
-	apt-add-repository -y ppa:jaywink/curldebian && \
-	apt-get update && \
-	apt-get install -y  build-essential vim numactl procps curl libcurl3 libcurl3-gnutls libcurl4-openssl-dev git zlib1g-dev libffi-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev && \
+	apt-get install -y sudo build-essential vim numactl procps curl libcurl3 libcurl3-gnutls libcurl4-openssl-dev git zlib1g-dev libffi-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev && \
 	apt-get clean && rm -rf /var/lib/apt/lists/* && \
 	gpg --keyserver pgp.mit.edu --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && \
 	curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/download/1.2/gosu-$(dpkg --print-architecture)" && \
