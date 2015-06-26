@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM ubuntu:14.04
 
 ENV CONFIGURE_OPTS --disable-install-doc
 ENV PATH /root/.rbenv/versions/2.2.0/bin:/root/.rbenv/bin:$PATH
